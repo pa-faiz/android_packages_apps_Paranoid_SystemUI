@@ -31,6 +31,7 @@ import co.aospa.systemui.qs.tiles.VpnTile
 import co.aospa.systemui.qs.tiles.VPNTetheringTile
 import co.aospa.systemui.qs.tiles.WifiTile
 import co.aospa.systemui.qs.tiles.AmbientDisplayTile
+import co.aospa.systemui.qs.tiles.VolumeTile
 import com.android.systemui.qs.tileimpl.QSTileImpl
 import dagger.Binds
 import dagger.Module
@@ -130,4 +131,9 @@ interface ParanoidQSModule {
     @StringKey(AmbientDisplayTile.TILE_SPEC)
     fun bindAmbientDisplayTile(ambientDisplayTile: AmbientDisplayTile): QSTileImpl<*>
 
+    /** Inject VolumeTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(VolumeTile.TILE_SPEC)
+    fun bindVolumeTile(volumeTile: VolumeTile): QSTileImpl<*>
 }
