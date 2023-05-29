@@ -40,4 +40,18 @@
     <!-- DC Dimming tile -->
     <string name="quick_settings_dc_dimming_label">DC Dimming</string>
 
+    <!-- Always-on Display QS tile -->
+    <string name="quick_settings_aod_label">Always-on display</string>
+
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Sound</string>
+    <string name="quick_settings_sound_ring">Ring</string>
+    <string name="quick_settings_sound_vibrate">Vibrate</string>
+    <string name="quick_settings_sound_silent">Silent</string>
+
+    <!-- Bluetooth dialog -->
+    <string name="turn_on_bluetooth">Bluetooth</string>
+    <string name="bluetooth_is_off">Bluetooth is off</string>
+    <string name="tap_a_device_to_connect">Tap a device to connect/disconnect</string>
+
 </resources>
