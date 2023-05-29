@@ -49,6 +49,11 @@
     <string name="quick_settings_sound_vibrate">Vibrate</string>
     <string name="quick_settings_sound_silent">Silent</string>
 
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sync</string>
+    <string name="accessibility_quick_settings_sync_off">Sync off.</string>
+    <string name="accessibility_quick_settings_sync_on">Sync on.</string>
+
     <!-- Bluetooth dialog -->
     <string name="turn_on_bluetooth">Bluetooth</string>
     <string name="bluetooth_is_off">Bluetooth is off</string>

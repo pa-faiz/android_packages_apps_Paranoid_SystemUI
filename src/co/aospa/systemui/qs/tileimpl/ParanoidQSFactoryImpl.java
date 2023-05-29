@@ -49,6 +49,7 @@ import com.android.systemui.qs.tiles.ReduceBrightColorsTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
 import com.android.systemui.qs.tiles.ScreenRecordTile;
 import com.android.systemui.qs.tiles.SoundTile;
+import com.android.systemui.qs.tiles.SyncTile;
 import com.android.systemui.qs.tiles.UiModeNightTile;
 import com.android.systemui.qs.tiles.WifiTile;
 import com.android.systemui.qs.tiles.WorkModeTile;
@@ -71,7 +72,7 @@ public class ParanoidQSFactoryImpl extends QSFactoryImpl {
     private final Provider<HeadsUpTile> mHeadsUpTileProvider;
     private final Provider<DcDimmingTile> mDcDimmingTileProvider;
     private final Provider<SoundTile> mSoundTileProvider;
-    private final Provider<UsbTetherTile> mUsbTetherTileProvider;
+    private final Provider<SyncTile> mSyncTileProvider;
 
     @Inject
     public ParanoidQSFactoryImpl(Lazy<QSHost> qsHostLazy,
@@ -109,10 +110,9 @@ public class ParanoidQSFactoryImpl extends QSFactoryImpl {
             Provider<CaffeineTile> caffeineTileProvider,
             Provider<DataSwitchTile> dataSwitchTileProvider,
             Provider<HeadsUpTile> headsUpTileProvider,
-            Provider<DcDimmingTile> dcDimTileProvider) {
             Provider<DcDimmingTile> dcDimTileProvider,
             Provider<SoundTile> soundTileProvider,
-            Provider<UsbTetherTile> usbTetherTileProvider) {
+            Provider<SyncTile> syncTileProvider) {
         super(qsHostLazy, customTileBuilderProvider, wifiTileProvider, internetTileProvider,
                 bluetoothTileProvider, cellularTileProvider, dndTileProvider,
                 colorInversionTileProvider, airplaneModeTileProvider, workModeTileProvider,
@@ -129,7 +129,7 @@ public class ParanoidQSFactoryImpl extends QSFactoryImpl {
         mHeadsUpTileProvider = headsUpTileProvider;
         mDcDimmingTileProvider = dcDimTileProvider;
         mSoundTileProvider = soundTileProvider;
-        mUsbTetherTileProvider = usbTetherTileProvider;
+        mSyncTileProvider = syncTileProvider;
     }
 
     @Nullable
@@ -144,10 +144,10 @@ public class ParanoidQSFactoryImpl extends QSFactoryImpl {
                 return mHeadsUpTileProvider.get();
             case "dc_dimming":
                 return mDcDimmingTileProvider.get();
-            case "usb_tether":
-                return mUsbTetherTileProvider.get();
-            case "sound":
+	    case "sound":
                 return mSoundTileProvider.get();
+            case "sync":
+                return mSyncTileProvider.get();
             default:
                 return super.createTileInternal(tileSpec);
         }
