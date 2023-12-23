@@ -28,6 +28,7 @@ import co.aospa.systemui.qs.tiles.PowerShareTile
 import co.aospa.systemui.qs.tiles.SoundTile
 import co.aospa.systemui.qs.tiles.UsbTetherTile
 import co.aospa.systemui.qs.tiles.VpnTile
+import co.aospa.systemui.qs.tiles.VPNTetheringTile
 import co.aospa.systemui.qs.tiles.WifiTile
 import co.aospa.systemui.qs.tiles.AmbientDisplayTile
 import com.android.systemui.qs.tileimpl.QSTileImpl
@@ -110,6 +111,12 @@ interface ParanoidQSModule {
     @IntoMap
     @StringKey(VpnTile.TILE_SPEC)
     fun bindVpnTile(vpnTile: VpnTile): QSTileImpl<*>
+
+    /** Inject VPNTetheringTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(VPNTetheringTile.TILE_SPEC)
+    fun bindVPNTetheringTile(vpnTetheringTile: VPNTetheringTile): QSTileImpl<*>
 
     /** Inject SoundTile into tileMap in QSModule */
     @Binds
