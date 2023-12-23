@@ -18,6 +18,7 @@ package co.aospa.systemui.qs.tileimpl;
 
 import com.android.systemui.qs.tileimpl.QSTileImpl
 
+import co.aospa.systemui.qs.tiles.AmbientDisplayTile
 import co.aospa.systemui.qs.tiles.AlwaysOnDisplayTile;
 import co.aospa.systemui.qs.tiles.BluetoothDialogTile;
 import co.aospa.systemui.qs.tiles.CaffeineTile;
@@ -116,5 +117,11 @@ interface ParanoidQSModule {
     @IntoMap
     @StringKey(SoundTile.TILE_SPEC)
     fun bindSoundTile(soundTile: SoundTile): QSTileImpl<*>
+
+    /** Inject AmbientDisplayTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(AmbientDisplayTile.TILE_SPEC)
+    fun bindAmbientDisplayTile(ambientDisplayTile: AmbientDisplayTile): QSTileImpl<*>
 
 }
