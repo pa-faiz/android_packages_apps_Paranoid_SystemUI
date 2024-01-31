@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Whether we want to stop pulsing while running the face scanning animation -->
+    <bool name="flag_stop_pulsing_face_scanning_animation">false</bool>
+
+</resources>
