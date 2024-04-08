@@ -16,6 +16,7 @@
 
 package co.aospa.systemui.qs.tileimpl;
 
+import co.aospa.systemui.qs.tiles.AdblockTile
 import co.aospa.systemui.qs.tiles.AlwaysOnDisplayTile
 import co.aospa.systemui.qs.tiles.BluetoothDialogTile
 import co.aospa.systemui.qs.tiles.CaffeineTile
@@ -42,6 +43,12 @@ interface ParanoidQSModule {
     @IntoMap
     @StringKey(AlwaysOnDisplayTile.TILE_SPEC)
     fun bindAlwaysOnDisplayTile(alwaysOnDisplayTile: AlwaysOnDisplayTile): QSTileImpl<*>
+
+    /** Inject AdblockTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(AdblockTile.TILE_SPEC)
+    fun bindAdblockTile(adblockTile: AdblockTile): QSTileImpl<*>
 
     /** Inject BluetoothDialogTile into tileMap in QSModule */
     @Binds

@@ -18,4 +18,7 @@
     <!-- Home controls -->
     <string name="home_controls_tile_title">Home</string>
 
+    <!-- AdBlock -->
+    <string name="quick_settings_adblock_label">AdBlock</string>
+
 </resources>
