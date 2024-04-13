@@ -53,10 +53,11 @@ public class AdblockTile extends QSTileImpl<BooleanState> {
 
     @Override
     protected void handleClick(@Nullable View view) {
-        boolean isEnabled = Settings.Global.getString(
-                mContext.getContentResolver(),
-                Settings.Global.PRIVATE_DNS_MODE
-        ).equals("hostname");
+        String dnsMode = Settings.Global.getString(
+            mContext.getContentResolver(),
+            Settings.Global.PRIVATE_DNS_MODE
+        );
+        boolean isEnabled = "hostname".equals(dnsMode) && !dnsMode.isEmpty();
         dnsHandler(!isEnabled);
     }
 
@@ -95,11 +96,11 @@ public class AdblockTile extends QSTileImpl<BooleanState> {
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
         state.label = getTileLabel();
-        boolean isEnabled = Settings.Global.getString(
-                mContext.getContentResolver(),
-                Settings.Global.PRIVATE_DNS_MODE
-        ).equals("hostname");
-        if (isEnabled) {
+        String dnsMode = Settings.Global.getString(
+            mContext.getContentResolver(),
+            Settings.Global.PRIVATE_DNS_MODE
+        );
+        if ("hostname".equals(dnsMode)) {
             state.icon = ResourceIcon.get(R.drawable.ic_qs_adblock_enabled);
             state.state = Tile.STATE_ACTIVE;
         } else {
