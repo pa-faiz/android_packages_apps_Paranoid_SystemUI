@@ -29,7 +29,6 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.android.internal.logging.MetricsLogger;
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.systemui.R;
 import com.android.systemui.dagger.qualifiers.Background;
 import com.android.systemui.dagger.qualifiers.Main;
@@ -87,11 +86,6 @@ public class VolumeTile extends QSTileImpl<BooleanState> {
     @Override
     public CharSequence getTileLabel() {
         return mContext.getString(R.string.quick_settings_volume_panel_label);
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return -1;
     }
 
     @Override
