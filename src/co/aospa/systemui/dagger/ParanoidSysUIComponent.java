@@ -24,10 +24,10 @@ import com.android.systemui.dagger.SysUISingleton;
 import com.android.systemui.dagger.SystemUIBinder;
 import com.android.systemui.dagger.SystemUICoreStartableModule;
 import com.android.systemui.dagger.SystemUIModule;
-import com.android.systemui.globalactions.ShutdownUiModule;
 import com.android.systemui.keyguard.CustomizationProvider;
 import com.android.systemui.statusbar.NotificationInsetsModule;
 import com.android.systemui.statusbar.QsFrameTranslateModule;
+import com.android.systemui.unfold.SysUIUnfoldModule;
 
 import dagger.Subcomponent;
 
@@ -40,7 +40,6 @@ import dagger.Subcomponent;
         DependencyProvider.class,
         NotificationInsetsModule.class,
         QsFrameTranslateModule.class,
-        ShutdownUiModule.class,
         SystemUIBinder.class,
         SystemUIModule.class,
         SystemUICoreStartableModule.class,
