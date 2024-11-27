@@ -18,4 +18,7 @@
     <!-- Home controls -->
     <string name="home_controls_tile_title">Home</string>
 
+    <!-- Reader Mode -->
+    <string name="quick_settings_reader_mode_label">Reader Mode</string>
+
 </resources>

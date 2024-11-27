@@ -17,6 +17,7 @@
 package co.aospa.systemui.qs.tileimpl;
 
 import co.aospa.systemui.qs.tiles.AlwaysOnDisplayTile
+import co.aospa.systemui.qs.tiles.ReaderModeTile
 import co.aospa.systemui.qs.tiles.CaffeineTile
 import co.aospa.systemui.qs.tiles.CellularTile
 import co.aospa.systemui.qs.tiles.DataSwitchTile
@@ -35,6 +36,12 @@ import dagger.multibindings.StringKey
 
 @Module
 interface ParanoidQSModule {
+
+    /** Inject ReaderModeTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(ReaderModeTile.TILE_SPEC)
+    fun bindReaderModeTile(readerModeTile: ReaderModeTile): QSTileImpl<*>
 
     /** Inject AlwaysOnDisplayTile into tileMap in QSModule */
     @Binds
