@@ -38,6 +38,7 @@ import com.android.systemui.util.time.SystemClock;
 import com.android.systemui.volume.CsdWarningDialog;
 import com.android.systemui.volume.VolumeComponent;
 import com.android.systemui.volume.VolumeDialogImpl;
+import com.android.systemui.volume.VolumeDialogModule;
 import com.android.systemui.volume.VolumePanelDialogReceiver;
 import com.android.systemui.volume.VolumeUI;
 import com.android.systemui.volume.dagger.AncModule;
@@ -51,6 +52,7 @@ import com.android.systemui.volume.domain.interactor.VolumePanelNavigationIntera
 import com.android.systemui.volume.panel.dagger.VolumePanelComponent;
 import com.android.systemui.volume.panel.dagger.factory.VolumePanelComponentFactory;
 import com.android.systemui.volume.panel.shared.flag.VolumePanelFlag;
+import com.android.systemui.volume.ui.binder.VolumeDialogMenuIconBinder;
 import com.android.systemui.volume.ui.navigation.VolumeNavigator;
 
 import co.aospa.systemui.tristate.dagger.TriStateModule;
@@ -74,6 +76,7 @@ import dagger.multibindings.IntoSet;
                 CaptioningModule.class,
                 MediaDevicesModule.class,
                 SpatializerModule.class,
+                VolumeDialogModule.class,
                 TriStateModule.class
         },
         subcomponents = {
@@ -127,6 +130,7 @@ public interface ParanoidVolumeModule {
             DumpManager dumpManager,
             Lazy<SecureSettings> secureSettings,
             VibratorHelper vibratorHelper,
+            VolumeDialogMenuIconBinder volumeDialogMenuIconBinder,
             SystemClock systemClock,
             VolumeDialogInteractor interactor) {
         VolumeDialogImpl impl = new VolumeDialogImpl(
@@ -147,6 +151,7 @@ public interface ParanoidVolumeModule {
                 dumpManager,
                 secureSettings,
                 vibratorHelper,
+                volumeDialogMenuIconBinder,
                 systemClock,
                 interactor);
         impl.setStreamImportant(AudioManager.STREAM_SYSTEM, false);
