@@ -23,6 +23,7 @@ import co.aospa.systemui.qs.tiles.CellularTile
 import co.aospa.systemui.qs.tiles.DataSwitchTile
 import co.aospa.systemui.qs.tiles.DcDimmingTile
 import co.aospa.systemui.qs.tiles.FivegTile
+import co.aospa.systemui.qs.tiles.DnsTile
 import co.aospa.systemui.qs.tiles.HeadsUpTile
 import co.aospa.systemui.qs.tiles.PowerShareTile
 import co.aospa.systemui.qs.tiles.UsbTetherTile
@@ -72,6 +73,12 @@ interface ParanoidQSModule {
     @IntoMap
     @StringKey(DcDimmingTile.TILE_SPEC)
     fun bindDcDimmingTile(dcDimmingTile: DcDimmingTile): QSTileImpl<*>
+
+    /** Inject DnsTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(DnsTile.TILE_SPEC)
+    fun bindDnsTile(dnsTile: DnsTile): QSTileImpl<*>
 
     /** Inject HeadsUpTile into tileMap in QSModule */
     @Binds
